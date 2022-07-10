@@ -20,6 +20,7 @@ theme.setup = function(cfg)
   ---@class od.Highlights.Base
   hi.base = {
     Comment = { fg = c.fg_dark, style = cfg.comment_style }, -- any comment
+    Noise = {fg = c.fg_dark},
     ColorColumn = { bg = c.bg_visual }, -- used for the columns set with 'colorcolumn'
     Conceal = { fg = c.fg_gutter }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = { fg = c.blue1, bg = c.fg0 }, -- character under the cursor
@@ -88,36 +89,36 @@ theme.setup = function(cfg)
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant = { fg = c.orange1 }, -- (preferred) any constant
+    Constant = { fg = c.red0 }, -- (preferred) any constant
     String = { fg = c.green0 }, --   a string constant: "this is a string"
     Character = { fg = c.green0 }, --  a character constant: 'c', '\n'
     -- Number        = { }, --   a number constant: 234, 0xff
-    Boolean = { fg = c.orange1 }, --  a boolean constant: TRUE, false
+    -- Boolean = { fg = c.orange1 }, --  a boolean constant: TRUE, false
     -- Float         = { }, --    a floating point constant: 2.3e10
 
-    Identifier = { fg = c.red1, style = cfg.variable_style }, -- (preferred) any variable name
-    Function = { fg = c.blue0, style = cfg.function_style }, -- function name (also: methods for classes)
+    Identifier = { fg = c.green1, style = cfg.variable_style }, -- (preferred) any variable name
+    Function = { fg = c.green1, style = cfg.function_style }, -- function name (also: methods for classes)
     Method = { link = 'Function' }, -- method name
-    Statement = { fg = c.purple0 }, -- (preferred) any statement
+    Statement = { fg = c.blue0 }, -- (preferred) any statement
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
-    Operator = { fg = c.red1 }, -- "sizeof", "+", "*", etc.
-    Keyword = { fg = c.cyan0, style = cfg.keyword_style }, --  any other keyword
+    -- Operator = { fg = c.red1 }, -- "sizeof", "+", "*", etc.
+    Keyword = { fg = c.blue0, style = cfg.keyword_style }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
-    PreProc = { fg = c.cyan0 }, -- (preferred) generic Preprocessor
+    PreProc = { fg = c.red0 }, -- (preferred) generic Preprocessor
     -- Include       = { }, --  preprocessor #include
     -- Define        = { }, --   preprocessor #define
     -- Macro         = { }, --    same as Define
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
-    Type = { fg = c.yellow1 }, -- (preferred) int, long, char, etc.
+    Type = { fg = c.green1 }, -- (preferred) int, long, char, etc.
     -- StorageClass  = { }, -- static, register, volatile, etc.
     -- Structure     = { }, --  struct, union, enum, etc.
     -- Typedef       = { }, --  A typedef
 
-    Special = { fg = c.red1 }, -- (preferred) any special symbol
+    Special = { fg = c.yellow0 }, -- (preferred) any special symbol
     -- SpecialChar   = { }, --  special character in a constant
     -- Tag           = { }, --    you can use CTRL-] on this
     -- Delimiter     = { }, --  character that needs attention
@@ -134,7 +135,7 @@ theme.setup = function(cfg)
     Todo = { fg = c.bg0, bg = c.yellow1 }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     qfLineNr = { link = 'CursorLineNr' },
     qfFileName = { fg = c.blue0 },
-    htmlTag = { fg = c.purple0, style = Styles.Bold },
+    -- htmlTag = { fg = c.purple0, style = Styles.Bold },
     -- mkdHeading = { fg = c.orange1, style = Styles.Bold},
     -- mkdCode = { fg = c.fg0, bg = c.bg1 },
     mkdCodeDelimiter = { fg = c.fg0 },
@@ -145,7 +146,7 @@ theme.setup = function(cfg)
     markdownHeadingDelimiter = { fg = c.orange1, style = Styles.Bold },
     markdownCode = { fg = c.yellow1 },
     markdownCodeBlock = { fg = c.yellow1 },
-    markdownH1 = { fg = c.red1, style = Styles.Bold },
+    markdownH1 = { fg = c.red0, style = Styles.Bold },
     markdownH2 = { fg = c.blue0, style = Styles.Bold },
     markdownLinkText = { fg = c.blue0, style = Styles.Underline },
     debugPC = { bg = c.bg1 }, -- used for highlighting the current line in terminal-debug
@@ -210,33 +211,33 @@ theme.setup = function(cfg)
     TSNote = { fg = c.bg0, bg = c.info },
     TSWarning = { fg = c.bg0, bg = c.warning },
     TSDanger = { fg = c.bg0, bg = c.error },
-    TSConstructor = { fg = c.red1 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    -- TSConstructor = { fg = c.red1 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     -- TSConditional       = { };    -- For keywords related to conditionnals.
-    TSConstant = { fg = c.yellow1 }, -- For constants
+    -- TSConstant = { }, -- For constants
     -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    TSField = { fg = c.cyan0 }, -- For fields.
+    -- TSField = { fg = c.cyan0 }, -- For fields.
     -- TSFloat             = { };    -- For floats.
     -- TSFunction          = { };    -- For function (calls and definitions).
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    TSInclude = { fg = c.purple0 }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = c.purple0, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = c.purple0, style = cfg.function_style }, -- For keywords used to define a fuction.
+    -- TSInclude = { fg = c.purple0 }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    -- TSKeyword = { fg = c.purple0, style = cfg.keyword_style }, -- For keywords that don't fall in previous categories.
+    -- TSKeywordFunction = { fg = c.purple0, style = cfg.function_style }, -- For keywords used to define a fuction.
     TSLabel = { fg = c.blue0 }, -- For labels: `label:` in C and `:label:` in Lua.
     jsonTSLabel = { fg = c.red0 }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
-    TSNamespace = { fg = c.red1 }, -- For identifiers referring to modules and namespaces.
+    TSNamespace = { fg = c.red0 }, -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     -- TSNumber            = { };    -- For all numbers
-    TSOperator = { fg = c.cyan0 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = c.red1 }, -- For parameters of a function.
+    -- TSOperator = { fg = c.cyan0 }, -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter = { fg = util.lighten(c.green0, 0.2, c.fg0) }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { fg = c.cyan0 }, -- Same as `TSField`.
-    TSPunctDelimiter = { fg = c.fg0 }, -- For delimiters ie: `.`
-    TSPunctBracket = { fg = c.fg_dark }, -- For brackets and parens.
+    -- TSProperty = { fg = c.cyan0 }, -- Same as `TSField`.
+    TSPunctDelimiter = { link = "Noise" }, -- For delimiters ie: `.`
+    TSPunctBracket = { link = "Noise" }, -- For brackets and parens.
     TSPunctSpecial = { fg = c.fg0 }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
     -- TSString            = { };    -- For strings.
@@ -245,10 +246,10 @@ theme.setup = function(cfg)
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSVariable = { fg = c.red0, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
-    TSVariableBuiltin = { fg = c.yellow1 }, -- Variable names that are defined by the languages, like `this` or `self`.
-    TSTag = { fg = c.red1 }, -- Tags like html tag names.
-    TSTagAttribute = { fg = c.orange0 },
+    -- TSVariable = { fg = c.red0, style = cfg.variable_style }, -- Any variable name that does not have another highlight.
+    -- TSVariableBuiltin = { fg = c.yellow1 }, -- Variable names that are defined by the languages, like `this` or `self`.
+    -- TSTag = { fg = c.red1 }, -- Tags like html tag names.
+    -- TSTagAttribute = { fg = c.orange0 },
     -- TSTagDelimiter      = { };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
     -- TSEmphasis          = { };    -- For text to be represented with emphasis.
@@ -261,13 +262,13 @@ theme.setup = function(cfg)
     Quote = { fg = c.green0 },
 
     -- javascript
-    javascriptTSFunction = { fg = c.yellow1 }, -- For function (calls and definitions).
-    javascriptTSVariable = { fg = c.yellow1 },
-    javascriptTSProperty = { fg = c.blue0 },
+    -- javascriptTSFunction = { fg = c.yellow1 }, -- For function (calls and definitions).
+    -- javascriptTSVariable = { fg = c.yellow1 },
+    -- javascriptTSProperty = { fg = c.blue0 },
 
     -- css
-    cssStringQQ = { fg = c.green0, style = Styles.Underline },
-    cssBraces = { fg = c.fg0 },
+    -- cssStringQQ = { fg = c.green0, style = Styles.Underline },
+    cssBraces = { link = "Noise" },
 
     -- less
     lessInclude = { fg = c.purple0 },
@@ -290,8 +291,8 @@ theme.setup = function(cfg)
     phpTSConstructor = { fg = c.yellow1 },
 
     -- python
-    pythonTSParameter = { fg = c.orange0 },
-    pythonTSFuncBuiltin = { fg = c.cyan0 },
+    -- pythonTSParameter = { fg = c.orange0 },
+    -- pythonTSFuncBuiltin = { fg = c.cyan0 },
 
     -- ruby
     rubyTSSymbol = { fg = c.cyan0 },
@@ -315,7 +316,7 @@ theme.setup = function(cfg)
     typescriptTSKeywordOperator = { fg = c.purple0 },
     typescriptTSMethod = { fg = c.purple0 },
     typescriptTSProperty = { fg = c.red0 },
-    typescriptTSVariable = { fg = c.yellow1 },
+    -- typescriptTSVariable = { fg = c.yellow1 },
 
     -- purescript
     purescriptModule = { fg = c.blue0 },
