@@ -38,7 +38,7 @@ theme.setup = function(cfg)
     -- TermCursorNC= { }, -- cursor in an unfocused terminal
     ErrorMsg = { fg = c.error }, -- error messages on the command line
     VertSplit = { fg = c.bg_visual }, -- the column separating vertically split windows
-    Folded = { fg = c.blue0, bg = c.fg_gutter }, -- line used for closed folds
+    Folded = { bg = c.bg1 }, -- line used for closed folds
     FoldColumn = { fg = c.fg_gutter, bg = c.bg0 }, -- 'foldcolumn'
     SignColumn = { fg = c.fg_gutter, bg = cfg.transparent and c.none or c.bg_linenumber }, -- column where |signs| are displayed
     SignColumnSB = { fg = c.fg_gutter, bg = c.bg_sidebar }, -- column where |signs| are displayed
