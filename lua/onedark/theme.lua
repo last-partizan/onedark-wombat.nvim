@@ -259,7 +259,7 @@ theme.setup = function(cfg)
     -- TSLiteral           = { };    -- Literal text.
     -- TSURI               = { };    -- Any URI like a link or email.
 
-    Quote = { fg = c.green0 },
+    -- Quote = { fg = c.green0 },
 
     -- javascript
     -- javascriptTSFunction = { fg = c.yellow1 }, -- For function (calls and definitions).
@@ -275,7 +275,7 @@ theme.setup = function(cfg)
     lessClass = { fg = c.orange1 },
 
     -- make
-    makeIdent = { fg = c.orange0 },
+    -- makeIdent = { fg = c.orange0 },
 
     -- markdown
     TSURI = { fg = c.blue0, style = Styles.Underline },
@@ -312,10 +312,10 @@ theme.setup = function(cfg)
     sqlKeyword = { fg = c.purple0 },
 
     -- typescript
-    typescriptTSConstructor = { fg = c.blue0 },
-    typescriptTSKeywordOperator = { fg = c.purple0 },
-    typescriptTSMethod = { fg = c.purple0 },
-    typescriptTSProperty = { fg = c.red0 },
+    -- typescriptTSConstructor = { fg = c.blue0 },
+    -- typescriptTSKeywordOperator = { fg = c.purple0 },
+    -- typescriptTSMethod = { fg = c.purple0 },
+    -- typescriptTSProperty = { fg = c.red0 },
     -- typescriptTSVariable = { fg = c.yellow1 },
 
     -- purescript
