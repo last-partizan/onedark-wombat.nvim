@@ -300,9 +300,9 @@ theme.setup = function(cfg)
     rubyTSParameter = { fg = c.yellow1 },
 
     -- scss
-    scssTSProperty = { fg = c.orange0 },
-    scssTSString = { fg = c.green0, style = Styles.Underline },
-    scssTSType = { fg = c.red0 },
+    -- scssTSProperty = { fg = c.orange0 },
+    -- scssTSString = { fg = c.green0, style = Styles.Underline },
+    -- scssTSType = { fg = c.red0 },
 
     -- bash shell
     bashTSFuncBuiltin = { fg = c.cyan0 },
