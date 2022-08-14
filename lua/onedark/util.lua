@@ -48,7 +48,7 @@ end
 
 ---@param hex od.HexColor Color
 ---@param amount number number between 0 and 1. 0 results in bg, 1 results in fg
----@param bg od.HexColor Background color
+---@param bg? od.HexColor Background color
 ---@return od.HexColor
 util.darken = function(hex, amount, bg)
   return util.blend(hex, bg or util.bg, math.abs(amount))
@@ -56,7 +56,7 @@ end
 
 ---@param hex od.HexColor Color
 ---@param amount number number between 0 and 1. 0 results in bg, 1 results in fg
----@param fg od.HexColor Foreground color
+---@param fg? od.HexColor Foreground color
 ---@return od.HexColor
 util.lighten = function(hex, amount, fg)
   return util.blend(hex, fg or util.fg, math.abs(amount))
