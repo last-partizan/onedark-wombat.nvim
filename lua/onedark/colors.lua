@@ -20,6 +20,7 @@ colors.setup = function(cfg)
     cyan0 = '#56b6c2',
     fg0 = '#e5e7eb',
     fg_dark = '#798294',
+    fg_darker = '#525863',
     fg_gutter = '#a0a8b0',
     fg_light = '#adbac7',
     green0 = '#95e454',
@@ -81,7 +82,7 @@ colors.setup = function(cfg)
   c.eob = cfg.hide_end_of_buffer and c.bg0 or c.fg_gutter
 
   -- LineNumber
-  c.bg_linenumber = cfg.highlight_linenumber and c.bg1 or c.bg0
+  c.bg_linenumber = cfg.highlight_linenumber and c.bg_highlight or c.bg0
 
   -- Search
   c.bg_search = c.yellow0

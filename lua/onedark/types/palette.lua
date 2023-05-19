@@ -30,6 +30,7 @@
 ---@field public cyan0 od.HexColor
 ---@field public fg0 od.HexColor
 ---@field public fg_dark od.HexColor
+---@field public fg_darker od.HexColor
 ---@field public fg_gutter od.HexColor
 ---@field public fg_light od.HexColor
 ---@field public green0 od.HexColor
