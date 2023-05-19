@@ -1,4 +1,4 @@
----@class od.HexColor string
+---@alias od.HexColor string
 
 ---@class od.GitPalette
 ---@field public add od.HexColor
