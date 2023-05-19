@@ -73,7 +73,7 @@ colors.setup = function(cfg)
   }
 
   -- Sidebar and Floats
-  c.bg_sidebar = (cfg.transparent_sidebar and c.none) or cfg.dark_sidebar and c.bg1 or c.bg0
+  c.bg_sidebar = (cfg.transparent_sidebar and c.none) or cfg.dark_sidebar and c.bg1 or c.bg_highlight
   c.bg_float = cfg.dark_float and c.bg1 or c.bg0
 
   -- EndOfBuffer
@@ -82,7 +82,7 @@ colors.setup = function(cfg)
   c.eob = cfg.hide_end_of_buffer and c.bg0 or c.fg_gutter
 
   -- LineNumber
-  c.bg_linenumber = cfg.highlight_linenumber and c.bg_highlight or c.bg0
+  c.bg_signcol = cfg.highlight_linenumber and c.bg_highlight or c.bg0
 
   -- Search
   c.bg_search = c.yellow0

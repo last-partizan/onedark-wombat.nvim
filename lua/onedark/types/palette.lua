@@ -34,6 +34,7 @@
 ---@field public fg_gutter od.HexColor
 ---@field public fg_light od.HexColor
 ---@field public green0 od.HexColor
+---@field public green1 od.HexColor
 ---@field public orange0 od.HexColor
 ---@field public orange1 od.HexColor
 ---@field public purple0 od.HexColor
@@ -52,7 +53,7 @@
 ---@field public sidebar_eob od.HexColor
 ---@field public eob od.HexColor
 -- LineNumber
----@field public bg_linenumber od.HexColor
+---@field public bg_signcol od.HexColor
 -- Search
 ---@field public bg_search od.HexColor
 ---@field public fg_search od.HexColor

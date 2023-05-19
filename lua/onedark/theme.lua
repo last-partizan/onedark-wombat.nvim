@@ -40,12 +40,12 @@ theme.setup = function(cfg)
     VertSplit = { fg = c.bg_visual }, -- the column separating vertically split windows
     Folded = { bg = c.bg1 }, -- line used for closed folds
     FoldColumn = { fg = c.fg_gutter, bg = c.bg0 }, -- 'foldcolumn'
-    SignColumn = { fg = c.fg_gutter, bg = cfg.transparent and c.none or c.bg_linenumber }, -- column where |signs| are displayed
-    SignColumnSB = { fg = c.fg_gutter, bg = c.bg_sidebar }, -- column where |signs| are displayed
+    SignColumn = { fg = c.fg_gutter, bg = cfg.transparent and c.none or c.bg_signcol }, -- column where |signs| are displayed
+    SignColumnSB = { fg = c.fg_gutter, bg = c.bg_signcol }, -- column where |signs| are displayed
     Substitute = { fg = c.black0, bg = c.red1 }, -- |:substitute| replacement text highlighting
     LineNr = {
       fg = cfg.transparent and c.fg0 or c.fg_darker,
-      bg = cfg.transparent and c.none or c.bg_linenumber,
+      bg = cfg.transparent and c.none or c.bg_signcol,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = c.fg0, bg = cfg.transparent and c.none or c.bg_highlight }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange1, style = Styles.Bold }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -157,10 +157,10 @@ theme.setup = function(cfg)
     LspReferenceText = { bg = c.bg_visual }, -- used for highlighting "text" references
     LspReferenceRead = { bg = util.blend(c.bg_visual, c.blue0, 0.8) }, -- used for highlighting "read" references
     LspReferenceWrite = { bg = util.blend(c.bg_visual, c.purple0, 0.9) }, -- used for highlighting "write" references
-    LspDiagnosticsDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultError = { fg = c.error, bg = c.bg_signcol }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning = { fg = c.warning, bg = c.bg_signcol }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation = { fg = c.info, bg = c.bg_signcol }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint = { fg = c.hint, bg = c.bg_signcol }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.1) }, -- Used for "Error" diagnostic virtual text
     LspDiagnosticsVirtualTextWarning = { fg = c.warning, bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
     LspDiagnosticsVirtualTextInformation = { fg = c.info, bg = util.darken(c.info, 0.1) }, -- Used for "Information" diagnostic virtual text
@@ -383,9 +383,9 @@ theme.setup = function(cfg)
     GitGutterDelete = { fg = c.git_signs.delete }, -- diff mode: Deleted line |diff.txt|
 
     -- GitSigns
-    GitSignsAdd = { fg = c.git_signs.add, bg = c.bg_linenumber }, -- diff mode: Added line |diff.txt|
-    GitSignsChange = { fg = c.git_signs.change, bg = c.bg_linenumber }, -- diff mode: Changed line |diff.txt|
-    GitSignsDelete = { fg = c.git_signs.delete, bg = c.bg_linenumber }, -- diff mode: Deleted line |diff.txt|
+    GitSignsAdd = { fg = c.git_signs.add, bg = c.bg_signcol }, -- diff mode: Added line |diff.txt|
+    GitSignsChange = { fg = c.git_signs.change, bg = c.bg_signcol }, -- diff mode: Changed line |diff.txt|
+    GitSignsDelete = { fg = c.git_signs.delete, bg = c.bg_signcol }, -- diff mode: Deleted line |diff.txt|
     GitSignsCurrentLineBlame = { fg = util.darken(c.fg_dark, 0.6) }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
