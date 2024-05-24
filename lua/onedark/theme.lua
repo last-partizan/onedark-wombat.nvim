@@ -103,7 +103,7 @@ theme.setup = function(cfg)
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
-    -- Operator = { fg = c.red1 }, -- "sizeof", "+", "*", etc.
+    Operator = { fg = c.cyan0 }, -- "sizeof", "+", "*", etc.
     Keyword = { fg = c.blue0, style = cfg.keyword_style }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
